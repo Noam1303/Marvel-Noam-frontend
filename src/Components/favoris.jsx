@@ -19,7 +19,7 @@ const Favoris = ({ user, setUser, Cookies, favoris, setFavoris }) => {
         if (!user || user.length === 0) return; // Si l'utilisateur n'est pas connecté, ne rien faire
 
         const token = user[0]; // Récupérer le token utilisateur
-        const response = await axios.get("site--test-backend--7g4fljlbl5js.code.run/favoris", {
+        const response = await axios.get("https://site--test-backend--7g4fljlbl5js.code.run/favoris", {
             headers: {
                 Authorization: `Bearer ${token}`, // Autorisation via le token
             },
@@ -37,10 +37,10 @@ const Favoris = ({ user, setUser, Cookies, favoris, setFavoris }) => {
             newFavoris.map((favori) =>
                 favori.iscomics && favori.iscomics === true
                     ? axios
-                          .get(`site--test-backend--7g4fljlbl5js.code.run/comic/${favori.articleId}`)
+                          .get(`https://site--test-backend--7g4fljlbl5js.code.run/comic/${favori.articleId}`)
                           .then((res) => res.data) // Récupérer les détails si c'est un comic
                     : axios
-                          .get(`site--test-backend--7g4fljlbl5js.code.run/comics/${favori.articleId}`)
+                          .get(`https://site--test-backend--7g4fljlbl5js.code.run/comics/${favori.articleId}`)
                           .then((res) => res.data) // Récupérer les détails si c'est un autre type d'article
             )
         );

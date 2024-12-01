@@ -25,7 +25,7 @@ const comicsSingle = ({ user, setUser, Cookies, favoris, setFavoris }) => {
             console.log("favoris");
             const iscomics = true;
             const response = await axios.post(
-                "site--test-backend--7g4fljlbl5js.code.run/favoris",
+                "https://site--test-backend--7g4fljlbl5js.code.run/favoris",
                 { id, iscomics },
                 {
                     headers: {
@@ -51,7 +51,7 @@ const comicsSingle = ({ user, setUser, Cookies, favoris, setFavoris }) => {
 
     // Fonction pour récupérer les données du comic spécifique
     const fetchData = async () => {
-        const response = await axios.get("site--test-backend--7g4fljlbl5js.code.run/comic/" + id); // Requête GET pour obtenir les détails du comic
+        const response = await axios.get("https://site--test-backend--7g4fljlbl5js.code.run/comic/" + id); // Requête GET pour obtenir les détails du comic
         if (response.data) {
             const data = response.data;
             setData(data); // Mise à jour de l'état avec les données du comic

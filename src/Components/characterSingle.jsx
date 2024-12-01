@@ -25,12 +25,12 @@ const CharacterSingle = ({ user, setUser, Cookies, favoris, setFavoris }) => {
 
     // Fonction pour récupérer les données des comics et des favoris
     const fetchData = async () => {
-        const response = await axios.get(`http://localhost:8000/comics/${id}`); // Requête pour récupérer les comics d'un personnage
+        const response = await axios.get(`site--test-backend--7g4fljlbl5js.code.run/comics/${id}`); // Requête pour récupérer les comics d'un personnage
 
         // Si l'utilisateur est connecté, récupérer ses favoris
         if (user.length > 0) {
             const idUser = user[1];
-            const favoritesData = await axios.get(`http://localhost:8000/user?id=${idUser}`);
+            const favoritesData = await axios.get(`site--test-backend--7g4fljlbl5js.code.run/user?id=${idUser}`);
             const resultFav = favoritesData.data.favorites;
             setLike(resultFav); // Met à jour les favoris
         }
@@ -52,7 +52,7 @@ const CharacterSingle = ({ user, setUser, Cookies, favoris, setFavoris }) => {
         else {
             console.log("favoris");
             const iscomics = true; // Indique que l'article est un comics
-            const response = await axios.post('http://localhost:8000/favoris', { id, iscomics }, {
+            const response = await axios.post('site--test-backend--7g4fljlbl5js.code.run/favoris', { id, iscomics }, {
                 headers: {
                     'Authorization': `Bearer ${user[0]}` // Autorisation avec le token utilisateur
                 }

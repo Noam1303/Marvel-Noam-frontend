@@ -33,7 +33,7 @@ const Signup = ({ user, setUser, Cookies, setFavoris }) => {
     const handleSubmit = async () => {
         // Vérification que tous les champs sont remplis
         if (username && email && password) {
-            const response = await axios.post("http://localhost:8000/signup", { username, email, password });
+            const response = await axios.post("site--test-backend--7g4fljlbl5js.code.run/signup", { username, email, password });
             if (response.status === 200) {
                 // Si la réponse est OK, on enregistre le token et l'ID dans les cookies et dans l'état de l'application
                 if (response.data) {

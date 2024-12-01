@@ -21,7 +21,7 @@ const Comics = ({data, setData, user, setUser, Cookies, favoris, setFavoris}) =>
 
     // Calculer le nombre total de pages disponibles pour les comics
     const numberOfPages = async() => {
-        const response = await axios.get('http://localhost:8000/comicsPage?title='+input);
+        const response = await axios.get('site--test-backend--7g4fljlbl5js.code.run/comicsPage?title='+input);
         const result = response.data;
         setPage(result); // Mettre à jour l'état du nombre de pages
         if(currentPage >= result-1) { // Ajuster la page courante si elle dépasse le total
@@ -33,11 +33,11 @@ const Comics = ({data, setData, user, setUser, Cookies, favoris, setFavoris}) =>
     const fetchData = async() => {        
         try {
             const pageToSkip = currentPage * 20; // Calcul de l'offset pour la pagination
-            const response = await axios.get(`http://localhost:8000/comics?skip=${pageToSkip}&title=${input}`);
+            const response = await axios.get(`site--test-backend--7g4fljlbl5js.code.run/comics?skip=${pageToSkip}&title=${input}`);
             setData(response.data.results); // Mise à jour des données des comics
             if(user.length > 0) { // Si un utilisateur est connecté, récupérer ses favoris
                 const id = user[1];        
-                const favoritesData = await axios.get('http://localhost:8000/user?id='+id);
+                const favoritesData = await axios.get('site--test-backend--7g4fljlbl5js.code.run/user?id='+id);
                 setLike(favoritesData.data.favorites); // Mise à jour des favoris
             }
             setLoading(true); // Indiquer que les données sont chargées
@@ -94,7 +94,7 @@ const Comics = ({data, setData, user, setUser, Cookies, favoris, setFavoris}) =>
         if(user.length === 0) navigate('/login'); // Rediriger vers la page de connexion si non connecté
         else {
             const iscomics = true;
-            const response = await axios.post('http://localhost:8000/favoris', {id, iscomics}, {
+            const response = await axios.post('site--test-backend--7g4fljlbl5js.code.run/favoris', {id, iscomics}, {
                 headers: { 'Authorization': `Bearer ${user[0]}` }
             });
             if(response.status === 200) console.log("liked");
@@ -119,7 +119,7 @@ const Comics = ({data, setData, user, setUser, Cookies, favoris, setFavoris}) =>
             return setAuto([])
         }
         const pageToSkip = currentPage * 20
-        const response = await axios.get("http://localhost:8000/comics?skip=" + pageToSkip + "&title=" + value)  
+        const response = await axios.get("site--test-backend--7g4fljlbl5js.code.run/comics?skip=" + pageToSkip + "&title=" + value)  
         const result = response.data.results
         if(result !== undefined){
             if (result.length === 0) {

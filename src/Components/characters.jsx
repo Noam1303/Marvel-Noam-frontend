@@ -27,7 +27,7 @@ const Characters = ({ data, setData, user, setUser, Cookies, favoris, setFavoris
 
     // Fonction pour récupérer le nombre de pages disponibles
     const numberOfPages = async () => {
-        const response = await axios.get('http://localhost:8000/charPage?title=' + input)
+        const response = await axios.get('site--test-backend--7g4fljlbl5js.code.run/charPage?title=' + input)
         const result = response.data        
         setPage(result)        
         // Gestion des cas où l'utilisateur est en dehors des pages disponibles
@@ -43,14 +43,14 @@ const Characters = ({ data, setData, user, setUser, Cookies, favoris, setFavoris
     // Fonction pour récupérer les données des personnages
     const fetchData = async () => {
         const pageToSkip = currentPage * 20 // Calcul du décalage pour la pagination
-        const response = await axios.get("http://localhost:8000/characters?skip=" + pageToSkip + "&title=" + input)        
+        const response = await axios.get("site--test-backend--7g4fljlbl5js.code.run/characters?skip=" + pageToSkip + "&title=" + input)        
         const result = response.data 
         setData(result.results)
 
         // Si l'utilisateur est connecté, récupérer ses favoris
         if (user.length > 0) {
             const id = user[1]        
-            const favoritesData = await axios.get('http://localhost:8000/user?id=' + id)
+            const favoritesData = await axios.get('site--test-backend--7g4fljlbl5js.code.run/user?id=' + id)
             const resultFav = favoritesData.data.favorites        
             setLike(resultFav)
         }
@@ -104,7 +104,7 @@ const Characters = ({ data, setData, user, setUser, Cookies, favoris, setFavoris
         if (user.length === 0) navigate('/login') // Si non connecté, redirection vers login
         else {
             const iscomics = false
-            const response = await axios.post('http://localhost:8000/favoris', { id, iscomics }, {
+            const response = await axios.post('site--test-backend--7g4fljlbl5js.code.run/favoris', { id, iscomics }, {
                 headers: {
                     'Authorization': `Bearer ${user[0]}`
                 }
@@ -138,7 +138,7 @@ const Characters = ({ data, setData, user, setUser, Cookies, favoris, setFavoris
             return setAuto([])
         }
         const pageToSkip = currentPage * 20
-        const response = await axios.get("http://localhost:8000/characters?skip=" + pageToSkip + "&title=" + value)  
+        const response = await axios.get("site--test-backend--7g4fljlbl5js.code.run/characters?skip=" + pageToSkip + "&title=" + value)  
         const result = response.data.results
         if (result.length === 0) {
             return setAuto([])

@@ -1,0 +1,35 @@
+/* Media Queries : Adaptation aux écrans entre 1025px et 1184px */
+@media(min-width: 1025px) and  (max-width: 1184px){
+
+    .logo {
+        width: 100px; /* Réduction de la taille du logo pour les écrans moyens */
+    }
+
+    .marvel-home {
+        width: 50vw; /* La largeur de l'élément Marvel est réduite à 50% de la fenêtre */
+    }
+
+    .header-button {
+        display: flex; /* Les boutons de l'en-tête sont affichés en flexbox */
+        justify-content: center; /* Centrage horizontal */
+        padding: 10px; /* Espacement interne */
+        margin: 10px; /* Espacement externe */
+    }
+
+    #fav {
+        display: flex; /* Bouton favori également centré */
+        justify-content: center;
+    }
+
+    .formSignup-container {
+        margin-top: -80px; /* Ajustement de l'espacement supérieur pour un alignement personnalisé */
+    }
+
+    h1 {
+        margin-top: 100px; /* Espacement supérieur plus important pour le titre */
+    }
+
+    .formLogin-container > input, .formSignup-container > input {
+        padding: 30px; /* Augmentation de l'espacement interne pour une meilleure accessibilité */
+    }
+}

@@ -1,0 +1,26 @@
+/* Media Queries : Écrans de 768px ou moins (petits écrans comme les téléphones) */
+@media (max-width: 768px){
+    .logo {
+        width: 100px; /* Taille du logo adaptée pour les téléphones */
+    }
+
+    .marvel-home {
+        width: 70vw; /* La largeur est augmentée pour occuper plus d'espace sur les petits écrans */
+    }
+
+    .header-button {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #fav {
+        display: flex; /* Bouton favori centré */
+        justify-content: center;
+    }
+
+    .formSignup-container {
+        margin-top: -80px; /* Ajustement vertical */
+    }
+}

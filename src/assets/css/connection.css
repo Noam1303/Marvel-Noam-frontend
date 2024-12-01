@@ -1,0 +1,54 @@
+
+/* Style pour le conteneur principal d'inscription */
+.signup-container {
+    width: 100%; /* Utilise toute la largeur de l'écran */
+    display: flex; /* Centrage en flexbox */
+    justify-content: center;
+    margin-top: 100px; /* Espacement supérieur */
+}
+
+/* Styles partagés pour les conteneurs d'inscription et de connexion */
+.formSignup-container, .formLogin-container {
+    display: flex; /* Disposition flexbox */
+    flex-direction: column; /* Empile les éléments verticalement */
+    height: 60vh; /* Hauteur de 60% de la fenêtre */
+    justify-content: center; /* Centrage vertical */
+    align-items: center; /* Centrage horizontal */
+}
+
+/* Style des champs d'entrée pour les formulaires d'inscription et de connexion */
+.formSignup-container > input, .formLogin-container > input {
+    margin: 10px; /* Espacement autour des champs */
+    width: 30vw; /* Largeur des champs d'entrée */
+    padding: 10px; /* Espacement interne */
+    background-color: transparent; /* Fond transparent */
+    border: transparent; /* Bordures transparentes */
+    color: white; /* Texte en blanc */
+}
+
+/* Style pour les champs de texte et de mot de passe */
+input[type="text"], input[type="password"] {
+    border-bottom: solid gray 1px; /* Ligne grise en bas pour un effet minimaliste */
+}
+
+/* Style pour le bouton de soumission */
+input[type="submit"] {
+    font-size: 18px; /* Taille du texte */
+}
+
+input[type="submit"]:hover {
+    transition: 0.2s; /* Animation douce au survol */
+    color: rgb(206, 207, 207); /* Change la couleur du texte au survol */
+}
+
+/* Style pour les champs d'entrée lors de leur focus */
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none; /* Supprime la bordure par défaut au focus */
+}
+
+/* Style des titres */
+h1 {
+    margin: 20px; /* Espacement autour du titre */
+    font-weight: bold; /* Texte en gras */
+    font-size: 2rem; /* Taille du texte */
+}

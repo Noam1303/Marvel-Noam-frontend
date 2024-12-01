@@ -1,0 +1,57 @@
+/* Style pour l'en-tête */
+header {
+    width: 100vw; /* Largeur complète de l'écran */
+    height: 250px; /* Hauteur fixe */
+    z-index: 3; /* Place l'en-tête au-dessus des autres éléments */
+    position: sticky; /* Reste en haut lors du défilement */
+    background-color: rgb(0, 0, 0); /* Fond noir */
+    display: flex; /* Flexbox pour le centrage */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centre l'en-tête horizontalement */
+    top: 0; /* Positionne l'en-tête en haut de la page */
+}
+
+/* Style pour le conteneur de l'en-tête */
+.header-container {
+    display: flex; /* Flexbox pour la disposition des éléments */
+    align-items: center;
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: space-around; /* Espacement uniforme entre les éléments */
+    width: 100vw; /* Largeur complète de la fenêtre */
+    height: 100%; /* Hauteur totale de l'en-tête */
+}
+
+/* Conteneur pour les boutons */
+.button-container {
+    display: flex; /* Disposition flexbox */
+    justify-content: space-around; /* Espacement uniforme horizontalement */
+    align-items: center;
+    width: 100vw; /* Largeur complète */
+}
+
+/* Style des boutons de l'en-tête */
+.header-button {
+    font-size: 20px; /* Taille du texte */
+    margin: 10px; /* Espacement externe */
+    width: 33%; /* Largeur relative à l'en-tête */
+    padding: 20px; /* Espacement interne */
+    background-color: black; /* Fond noir */
+    border: solid transparent 0px; /* Bordures transparentes */
+    color: white; /* Texte en blanc */
+}
+
+.header-button:hover, .connection-button:hover, .heart:hover {
+    transition: 0.2s; /* Animation douce au survol */
+    transform: scale(1.1); /* Augmente légèrement la taille */
+}
+
+/* Style des boutons de connexion */
+.connection-button {
+    margin: 10px; /* Espacement externe */
+    padding: 10px; /* Espacement interne */
+    background-color: rgba(77, 74, 74, 0.123); /* Fond gris semi-transparent */
+    border: solid transparent 0px; /* Bordures transparentes */
+    border-radius: 10px; /* Coins arrondis */
+    color: white; /* Texte en blanc */
+}

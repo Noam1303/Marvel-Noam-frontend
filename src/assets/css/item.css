@@ -1,0 +1,221 @@
+/* Conteneurs principaux pour les différents types d'éléments (personnages, comics, favoris) */
+.characters-container, .characterSingle-container, .comics-container, .favoris-container {
+    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    display: flex; /* Flexbox pour aligner les enfants */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    flex-wrap: wrap; /* Permet le retour à la ligne si les enfants dépassent */
+}
+
+/* Style des éléments individuels pour les personnages, comics et favoris */
+.charItem, .charItemComics, .comicsItem, .favorisItem {
+    box-shadow: 8px 9px 10px rgba(0, 0, 0, 0.425); /* Ombre autour des éléments */
+    background-color: rgb(58, 41, 41); /* Couleur de fond */
+    border: solid rgb(78, 49, 49) 1px; /* Bordure */
+    border-radius: 10px; /* Coins arrondis */
+    margin: 20px; /* Espacement externe */
+    padding: 20px; /* Espacement interne */
+    height: 600px; /* Hauteur fixe */
+    width: 300px; /* Largeur fixe */
+}
+
+/* Effet au survol des éléments */
+.charItem:hover, .charItemComics:hover, .comicsItem:hover, .favorisItem:hover {
+    transition: 0.2s; /* Transition douce */
+    transform: scale(1.05); /* Agrandissement léger */
+    box-shadow: 40px 11px 12px rgba(0, 0, 0, 0.425); /* Ombre plus intense */
+}
+
+/* Titre des éléments individuels */
+.charItemTitle, .charItemTitleComics, .comicsItemTitle, .favorisItemTitle {
+    display: flex; /* Flexbox pour aligner le contenu */
+    justify-content: space-between; /* Espacement entre les enfants */
+    height: 10%; /* Hauteur relative à l'élément parent */
+}
+
+/* Conteneur pour les images des personnages */
+.charItemImg-container {
+    height: 60%; /* 60% de la hauteur de l'élément parent */
+}
+
+/* Style des images */
+.charItemImg, .charItemImgComics, .comicsItemImg, .favorisItemImg {
+    border-radius: 5px; /* Coins arrondis */
+    width: 100%; /* Largeur maximale */
+    object-fit: contain; /* Ajuste l'image sans la déformer */
+    height: 100%; /* Prend toute la hauteur du conteneur */
+}
+
+/* Espacement interne entre les sections d'un élément */
+.charItem > div, .charItemComics > div, .comicsItem > div, .favorisItem > div {
+    margin: 10px; /* Espacement autour des sections */
+}
+
+/* Description avec défilement si le contenu dépasse */
+.charItemDescription {
+    overflow-y: scroll; /* Défilement vertical activé */
+    height: 30%; /* Hauteur relative à l'élément parent */
+}
+
+/* Suppression de la barre de défilement visible */
+.charItemDescription::-webkit-scrollbar, .charItemDescriptionComics::-webkit-scrollbar, 
+.comicsItemDescription::-webkit-scrollbar, .comicsSingleItemDescription::-webkit-scrollbar,
+.favorisItemDescription::-webkit-scrollbar {
+    overflow-y: hidden;
+}
+
+/* Hauteur ajustée pour les éléments comics et favoris */
+.charItemComics, .comicsItem, .favorisItem {
+    height: 800px; /* Augmentation de la hauteur */
+}
+
+/* Description pour les comics et favoris */
+.charItemDescriptionComics, .comicsItemDescription, .favorisItemDescription {
+    overflow-y: scroll; /* Activer le défilement vertical */
+    height: 25%; /* Hauteur réduite */
+}
+
+/* Conteneur pour les images des comics */
+.charItemImgComics-container, .comicsItemImg-container, .favorisItemImg-container {
+    height: 60%;
+    max-height: 60%;
+}
+
+/* Hauteur ajustée pour les titres */
+.charItemTitleComics, .comicsItemTitle, .favorisItemTitle {
+    height: 15%;
+}
+
+/* Conteneur principal pour les détails d'un comic */
+.comicsSingle-container {
+    overflow-y: hidden; /* Pas de défilement vertical */
+}
+
+/* Titre stylisé des détails d'un comic */
+.comicsSingleItemTitle {
+    position: absolute;
+    font-size: 50px; /* Taille de police importante */
+    top: 55%; /* Position verticale */
+    left: 50%; /* Position horizontale */
+    transform: translate(-50%, -50%); /* Centrer parfaitement */
+    z-index: 1; /* Mettre au premier plan */
+    background-color: rgb(0, 0, 0); /* Fond semi-transparent */
+    color: transparent; /* Texte transparent */
+    -webkit-text-stroke: 2px rgb(255, 255, 255); /* Contour blanc */
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    width: 80%;
+    height: 30vh;
+    display: flex; /* Centrage avec Flexbox */
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: lighten; /* Effet de mélange avec le fond */
+}
+
+/* Description stylisée des détails d'un comic */
+.comicsSingleItemDescription {
+    position: absolute;
+    font-size: 50px;
+    top: 85%; /* Position en bas */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    width: 80%;
+    height: 20vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: scroll; /* Défilement vertical */
+    mix-blend-mode: lighten;
+}
+
+/* Effet au survol des descriptions et titres */
+.comicsSingleItemDescription:hover, .comicsSingleItemTitle:hover {
+    transition: 0.2s;
+    transform: scale(1.01) translate(-50%, -50%);
+    -webkit-text-stroke: 2px rgb(0, 0, 0); /* Contour noir */
+    background-color: rgb(255, 255, 255);
+}
+
+/* Conteneur pour l'image principale d'un comic */
+.comicsSingleItemImg-container {
+    position: relative;
+    background-color: rgb(68, 13, 13); /* Couleur de fond */
+    display: flex; /* Centrage avec Flexbox */
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 250px); /* Hauteur dynamique */
+    overflow: hidden; /* Rien ne déborde */
+}
+
+/* Image principale d'un comic */
+.comicsSingleItemImg {
+    width: 100vw; /* Largeur maximale */
+    object-fit: cover; /* Recouvre le conteneur sans déformation */
+}
+
+/* Barre de recherche */
+.searchbar {
+    margin: 20px; /* Espacement extérieur */
+    width: 30vw; /* Largeur relative */
+    padding: 10px;
+    background-color: transparent; /* Fond transparent */
+    border: transparent; /* Pas de bordure */
+    color: white; /* Couleur du texte */
+}
+
+/* Conteneur pour les suggestions automatiques */
+.auto-suggestion-container {
+    border-radius: 20px; /* Coins arrondis */
+    background-color: rgb(82, 31, 31); /* Couleur de fond */
+    color: rgb(255, 255, 255); /* Texte blanc */
+    width: 30vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Ombre */
+    z-index: 1; /* Premier plan */
+    overflow: hidden; /* Rien ne déborde */
+    display: flex;
+    flex-direction: column; /* Colonnes */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style des suggestions */
+.auto-suggestion {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid black 1px; /* Ligne de séparation */
+    width: calc(30vw - 20px);
+}
+
+/* Boutons (+, -, display) */
+#plus, #moins, #display {
+    border: transparent; /* Pas de bordure */
+    border-radius: 3px; /* Coins légèrement arrondis */
+    display: flex;
+    justify-content: center; /* Centrer le contenu */
+    align-items: center;
+    margin: 10px;
+    padding: 8px;
+}
+
+/* Style pour un cœur rouge (par exemple, favoris) */
+.heart-red {
+    color: red;
+}
+
+/* Style pour un élément grisé */
+.gray {
+    background-color: rgb(87, 44, 44);
+    color: red;
+}
+
+/* Style pour un élément blanc */
+.white {
+    background-color: white;
+    color: red;
+}

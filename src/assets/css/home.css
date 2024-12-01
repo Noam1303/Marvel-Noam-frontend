@@ -1,0 +1,14 @@
+/* Style pour le conteneur principal de la page d'accueil */
+.home-container {
+    width: 100%; /* Largeur complète */
+    color: white; /* Texte en blanc */
+    display: flex; /* Flexbox pour la disposition des éléments */
+    justify-content: center;
+    margin-top: 100px; /* Espacement supérieur */
+}
+
+/* Effet au survol de l'élément Marvel */
+.marvel-home:hover {
+    transition: 0.2s; /* Animation douce */
+    transform: rotate(360deg); scale: 1.2; /* Rotation complète et agrandissement */
+}

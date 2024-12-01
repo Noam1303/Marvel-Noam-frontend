@@ -1,0 +1,41 @@
+/* Importation des polices et des fichiers CSS supplémentaires */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Importation de la police Roboto depuis Google Fonts */
+@import url("./header.css"); /* Importation des styles pour l'en-tête */
+@import url("./home.css"); /* Importation des styles pour la page d'accueil */
+@import url("./item.css"); /* Importation des styles pour les éléments individuels */
+@import url("./connection.css"); /* Importation des styles pour la connexion */
+
+/* Importation des styles spécifiques à différentes tailles d'écran */
+@import url('./bigTablette.css'); /* Styles pour les grandes tablettes */
+@import url('./tablette.css'); /* Styles pour les tablettes */
+@import url('./phone.css'); /* Styles pour les téléphones */
+
+/* Style global pour le body */
+body {
+    background-color: rgb(41, 40, 40); /* Fond de couleur sombre */
+	font-family: 'Roboto', sans-serif; /* Police principale utilisée pour tout le site */
+    color: white; /* Texte blanc pour une meilleure lisibilité sur le fond sombre */
+    height: 100%; /* Hauteur totale de la page */
+    width: 100vw; /* Largeur totale de la fenêtre */
+}
+
+/* Style pour l'élément HTML */
+html {
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    width: 100vw; /* Largeur totale de la fenêtre */
+}
+
+/* Classe spécifique pour désactiver le défilement vertical */
+html.no-scroll {
+    overflow-y: hidden; /* Désactive le défilement vertical */
+}
+
+/* Style pour l'élément racine (#root, souvent utilisé dans des frameworks comme React) */
+#root {
+    height: 100%; /* Prend toute la hauteur disponible */
+}
+
+/* Style pour les balises de navigation */
+nav {
+    height: 100%; /* S'assure que la navigation occupe toute la hauteur disponible */
+}

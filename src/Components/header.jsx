@@ -12,7 +12,7 @@ const Header = ({ user, setUser, Cookies, setFavoris }) => {
                 <div>
                     <img
                         className="logo"
-                        src="/public/marvel-logo.png" // Source de l'image du logo
+                        src="marvel-logo.png" // Source de l'image du logo
                         alt="marvel logo"
                         width="180px" // Largeur de l'image
                         onClick={() => { navigate('/'); }} // Redirection vers la page d'accueil au clic
